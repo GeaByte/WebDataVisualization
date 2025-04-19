@@ -2,6 +2,7 @@
 // const viewBoxWidth = 960;
 // const viewBoxHeight = 500;
 const renderMap = (streetData, cleanedStreetData, ticketData, width, height) => {
+    mapDescription()
     width = window.innerWidth * 0.8
     height = 0.5 * width
     svg

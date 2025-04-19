@@ -13,7 +13,7 @@ Columns: [
 In street dataset, it uses AV for avenue, but in ticket dataset, it uses AVE for abbreviation.
 So, I decided to rename AV in the street dataset with AVE.
 
-Parse Maximum hourly rate, minimum hourly rate, and Year to float
+Parse year and entryDate to float and instantiate Date object when needed
 */
 
 let streetMap;
@@ -25,6 +25,7 @@ const width = window.innerWidth * 0.8
 const height = width * 0.5
 const svg = d3.select("svg")
 const chartButtons = d3.selectAll(".toggle-btn")
+const contextDescription = document.getElementById("context-description")
 
 // load data
 const loadData = () => {
@@ -105,4 +106,26 @@ const renderChart = (ticketData) => {
     }else if(clickedId === "bar-chart-btn"){
         renderBarChart(ticketData, width, height)
     }
+}
+
+const lineChartDescription = () => {
+    contextDescription.innerHTML = `
+        This line chart shows the number of parking tickets issued each year in Vancouver.
+        A rising trend may indicate stricter enforcement or increased population,
+        while a dip could suggest policy changes or external factors like the pandemic.`;
+}
+
+const mapDescription = () => {
+    contextDescription.innerHTML = `This map visualizes the distribution 
+    of parking tickets across Vancouver streets. Streets highlighted with 
+    deeper colors represent areas with a higher concentration of tickets. 
+    Use this view to identify hotspots for parking enforcement and potential 
+    areas with stricter regulations or higher vehicle activity`
+}
+
+const barChartDescription = () => {
+    contextDescription.innerHTML = `This bar chart displays the total number 
+    of parking tickets issued in Vancouver, grouped by quarter. It helps identify 
+    seasonal patterns in ticketing activity—such as spikes during certain 
+    months—and observe how enforcement trends have changed over time`
 }

@@ -1,4 +1,5 @@
 const renderLineChart = (ticketData, width, height) => {
+    lineChartDescription()
     width = window.innerWidth * 0.8
     height = 0.5 * width
     //resize svg
@@ -89,10 +90,12 @@ const renderLineChart = (ticketData, width, height) => {
         .attr("text-anchor", "middle")
         .attr("font-size", "12px")
         .attr("fill", "black")
+        .attr("font-weight", "bold")
         .text(d => d.Count);
 
     g.append("text")
     .attr("class", "title")
-    .attr("y", -10)
+    .attr("y", -20)
+    .attr("x", innerWidth / 2)
     .text(title);
 };

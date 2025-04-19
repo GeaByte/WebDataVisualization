@@ -1,4 +1,5 @@
 const renderBarChart = (ticketData, width, height) => {
+    barChartDescription()
     width = window.innerWidth * 0.8
     height = 0.5 * width
     //resize svg

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Tickets in Vancouver</title>
+    <title>Parking Tickets Data Analysis in Vancouver</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <link rel="stylesheet" href="./style.css" />
     <script src="./barChart.js" defer></script>
@@ -14,26 +14,39 @@
 </head>
 
 <body>
-    <h1>Understand Parking Tickets in Vancouver city</h1>
-    <p>In this page, you can explore the growth of pay rates by each job title</p>
+    <div class="container">
+        <h1>Welcome to the Parking Ticket Data Analysis in Vancouver!</h1>
+        <div class="introduction">
+            <p>In this page, explore the trends and patterns in parking ticket data
+                collected across the city. This interactive page allows you to visualize
+                the growth of parking violations over time, broken down by year and quarter.
+                You can analyze data through different chart types, including bar charts,
+                line charts, and maps, to uncover insights and better understand parking
+                enforcement in Vancouver.
+            </p>
+        </div>
 
-    <p>Data Source: <a
-            href="https://opendata.vancouver.ca/explore/dataset/parking-tickets/export/?sort=entrydate">Vancouver Open
-            Data Portal</a></p>
-    <p>Street Data Source: <a href="https://opendata.vancouver.ca/explore/dataset/lanes/export/">Vancouver Open Data
-            Portal</a></p>
-    
-    <div class="nav">
-        <button class="toggle-btn active" id="line-chart-btn">Line chart</button>
-        <button class="toggle-btn" id="map-chart-btn">View Map</button>
-        <button class="toggle-btn" id="bar-chart-btn">Bar Chart</button>
+        <p>Data Source: <a
+                href="https://opendata.vancouver.ca/explore/dataset/parking-tickets/export/?sort=entrydate">Vancouver
+                Open
+                Data Portal</a></p>
+        <p>Street Data Source: <a href="https://opendata.vancouver.ca/explore/dataset/lanes/export/">Vancouver Open Data
+                Portal</a></p>
+
+        <div class="nav">
+            <button class="toggle-btn active" id="line-chart-btn">Line chart</button>
+            <button class="toggle-btn" id="map-chart-btn">View Map</button>
+            <button class="toggle-btn" id="bar-chart-btn">Bar Chart</button>
+        </div>
+        <div class="filter">
+            <label for="year-filter">Select Year:</label>
+            <select id="year-filter">
+                <option value="All">All</option>
+            </select>
+        </div>
+        <svg></svg>
+        <div id="context-description"></div>
     </div>
-
-    <label for="year-filter">Select Year:</label>
-    <select id="year-filter">
-        <option value="All">All</option>
-    </select>
-    <svg></svg>
 </body>
 
 </html>
