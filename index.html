@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Tickets in Vancouver</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./barChart.js" defer></script>
+    <script src="./mapChart.js" defer></script>
+    <script src="./lineChart.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <h1>Understand Parking Tickets in Vancouver city</h1>
+    <p>In this page, you can explore the growth of pay rates by each job title</p>
+
+    <p>Data Source: <a
+            href="https://opendata.vancouver.ca/explore/dataset/parking-tickets/export/?sort=entrydate">Vancouver Open
+            Data Portal</a></p>
+    <p>Street Data Source: <a href="https://opendata.vancouver.ca/explore/dataset/lanes/export/">Vancouver Open Data
+            Portal</a></p>
+    
+    <div class="nav">
+        <button class="toggle-btn active" id="line-chart-btn">Line chart</button>
+        <button class="toggle-btn" id="map-chart-btn">View Map</button>
+        <button class="toggle-btn" id="bar-chart-btn">Bar Chart</button>
+    </div>
+
+    <label for="year-filter">Select Year:</label>
+    <select id="year-filter">
+        <option value="All">All</option>
+    </select>
+    <svg></svg>
+</body>
+
+</html>

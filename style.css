@@ -1,0 +1,54 @@
+h1{
+    display: inline
+}
+
+.street{
+    stroke-width: 0.5px;
+    stroke: black;
+}
+
+/* .highlight {
+    stroke: red;
+    stroke-width: 0.5px;
+    fill: none;
+  } */
+/* .fill{
+    stroke-width: 400;
+
+} */
+
+.toggle-btn{
+    border: none;
+    background-color: coral;
+    color: white;
+    font-size: 24px;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.toggle-btn.active{
+    opacity: 1;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.toggle-btn:hover{
+    opacity: 0.9;
+    font-size: 28px;
+}
+
+select{
+    margin-right: 2rem;
+}
+
+svg{
+    display: block;
+}
+
+text{
+    font-size: 16px;
+}
